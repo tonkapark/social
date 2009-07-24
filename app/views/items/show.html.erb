@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @item.user %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @item.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @item.body %>
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%=h @item.published_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
