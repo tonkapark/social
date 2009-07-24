@@ -1,0 +1,22 @@
+<% form_for :session, :url => session_path do |form| %>
+  
+  <ul>
+    <li>
+      <%= form.label :email %>
+      <%= form.text_field :email, { :class => 'big'} %>        
+    </li>
+    
+    <li>
+      <%= form.label :password %>
+      <%= form.password_field :password, { :class => 'big'} %> <%= link_to "Forgot password?", new_password_path %>  
+    </li>
+    
+    <li class="checkbox">
+      <%= form.check_box :remember_me %>
+      <%= form.label :remember_me %>    
+    </li>    
+    
+    <li class="submit">
+      <%= form.submit "Sign in", :disable_with => "Please wait..." %> | <%= link_to "Cancel", root_url %>
+    </li>
+<% end %>
