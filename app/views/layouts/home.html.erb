@@ -20,10 +20,7 @@
         <h3><%= link_to SITE_NAME, root_url %></h3>        
         <ul id="nav">
           <% if signed_in? %>
-          <% page_links_for_navigation.each do |link| -%>
-            <li><%= link_to(link.name, link.url) %></li>
-          <% end -%>
-            <li><%= link_to "Invites", invitations_path if current_user.admin? %></li>
+          <li><%= link_to 'Logout', sign_out_url %></li>
           <% else %>
           <li><%= link_to 'Sign in', sign_in_url %></li>
           <% end %>
