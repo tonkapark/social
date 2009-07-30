@@ -4,15 +4,13 @@
   <tr>
     <th>User</th>
     <th>Title</th>
-    <th>Body</th>
     <th>Published at</th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%=h item.user %></td>
+    <td><%=h item.user.email %></td>
     <td><%=h item.title %></td>
-    <td><%=h item.body %></td>
     <td><%=h item.published_at %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
