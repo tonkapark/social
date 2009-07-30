@@ -1,23 +1,7 @@
 <h1>Listing items</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Published at</th>
-  </tr>
 
-<% @items.each do |item| %>
-  <tr>
-    <td><%=h item.user.email %></td>
-    <td><%=h item.title %></td>
-    <td><%=h item.published_at %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => @items %>
 
 <br />
 
