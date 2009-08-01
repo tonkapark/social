@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   
   before_save :downcase_email
   
+  has_many :items
+  has_many :comments
+  
   protected
   
   def downcase_email

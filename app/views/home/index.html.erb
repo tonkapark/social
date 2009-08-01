@@ -1,3 +1,26 @@
-<% title SITE_NAME %>
+<% title SITE_NAME, false %>
 
-<p>Welcome to the site.</p>
+<div id="splash" class="span-10">
+  <div class="inner">
+    <h1>The Social Network for <br/> <%= SITE_NAME %></h1>
+    <p>Building a community together. Meet your neighbors. Share your plans. Talk about your favorites.</p>
+    <h2>Not a member, <%= link_to "Signup", sign_up_path %></h2>
+  </div>
+</div>
+
+<div class="prepend-1 span-7 last">
+<% unless signed_in? %>
+  <%= render :partial => 'sessions/form' %>
+<% else %>
+  <ul>
+    <% if signed_in? %>
+    
+    <li><%= link_to 'Start Conversation', new_item_path %></li>
+    <li><%= link_to 'Conversations', items_path %></li>
+    <li><%= link_to 'About', home_path('about') %></li>
+    <li><%= link_to 'Logout', sign_out_url %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="comment span-18">
+  <div class="body span-12">
+    <p><%= safe(comment.body) %></p>
+  </div>
+  
+  <div class="prepend-1 span-5 last">
+    <dl class="meta">
+      <dt>Author</dt>
+      <dd class="author"><%= comment.user.displayname.blank? ? '[Anonymous]' : h(comment.user.displayname)  %></dd>
+      <dt>Posted</dt>
+      <dd><%= comment.created_at.strftime("%B %d, %Y at %I:%M%p") %></dd>
+      <%- if @item.changeable_by?(current_user) -%>
+      <dt>Change?</dt>
+      <dd><%= link_to 'Edit', [:edit, comment.item, comment] %></dd>
+      <%- end -%>      
+    </dl>
+  </div>
+</div>

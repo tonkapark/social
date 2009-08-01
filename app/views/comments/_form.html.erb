@@ -1,0 +1,11 @@
+<% form_for([@item,@comment]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit button_name %> <% if @comment.id %>| <%= link_to 'Cancel', item_path(@item) %><% end %>
+
+  </p>
+<% end %>

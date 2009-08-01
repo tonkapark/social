@@ -1,4 +1,12 @@
 
-<div>
-  <%=h item.user.email %>, <strong><%= link_to h(item.title), item %></strong> - <%= time_ago_in_words item.published_at %> ago
+<div class="post">
+ <h2><%= link_to h(item.title), item %></h2> 
+ <dl class="meta">
+  <dt>Posted</dt>
+  <dd><%= item.published_at.strftime("%B %d, %Y at %I:%M%p") %></dd>
+  <dt>Author</dt>
+  <dd class="author"><%=h item.user.displayname %></dd>
+ </dl>
+
+
 </div>

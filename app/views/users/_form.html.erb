@@ -1,0 +1,22 @@
+
+  <ul>
+    <li>
+      <label for="user_displayname">Display Name <small>(ie: Matt Anderson)</small></label>
+      <%= form.text_field :displayname, {:class => "big"} %>
+    </li>
+
+    <li>
+      <label for="user_email">Email <small>We'll keep it a secret.</small></label>
+      <%= form.text_field :email, {:class => "big"} %>
+    </li>
+    
+    <li>
+      <%= form.label :password %>
+      <%= form.password_field :password, {:class => "big"} %>
+    </li>
+    
+    <li>
+      <%= form.label :password_confirmation, "Confirm password" %>
+      <%= form.password_field :password_confirmation, {:class => "big"} %>
+    </li>
+  </ul>

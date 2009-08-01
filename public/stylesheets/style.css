@@ -1,0 +1,87 @@
+  
+/* Redeclarations */
+  body                              {color:#333; font:13px/1.4 Helvetica, Arial, sans-serif; margin:0;}
+  h1                                {clear:left; font-size:2em; line-height:24px; margin:0 0 20px;}
+  h2                                {clear:left; font-size:1.5em; line-height:18px; margin:20px 0 10px;}
+  h4                                {font-size:1em;font-weight:bold;}
+  a:link, a:visited, a:active, a:hover        {color:#3671A1; text-decoration:underline;}
+
+
+/* basic forms */
+  form ul                           {margin:0; padding:0;}
+  form ul li                        {list-style-type:none; margin:0 0 13px; padding:0;}
+  form ul li label                  {display:block; margin:0 0 3px;}
+  form ul li small                  {font-size:11px; color:#777;}
+  form ul li.checkbox label         {display:inline;}
+  li.add_link                       {clear:left; padding-bottom:20px}
+
+  input.big                         {margin:0px; padding:5px; font-size:15px}
+  select.big                        {margin:0px; padding:3px; font-size:15px}  
+  input.title                       {margin:0px; padding:5px; font-size:15px; width: 100%;}  
+  textarea.item                     {width:100%;}
+  textarea.caption                  {width:100%;height:50px;}
+  
+  
+/* shared styles */  
+  h1 small, h2 small                {font-size:13px; font-weight:normal;}
+  p.instructions                    {margin:-15px 0 5px; color:#777; font-size:11px;}
+  p.feedback                        {background:#FFFFCC;border:solid 1px #eee; padding:1em;}
+  
+  div#content                       {border:solid 1px #eee;padding-top:20px;padding-bottom:20px;}
+  
+  div.flash                         {background-color:#E8F6E8 ;border:solid 1px #B9E3B9;}
+  
+/* public home */  
+  div#splash                        {margin:0 0 20px 0;background:#000; color: #ffcc33; }
+  div#splash div.inner              {padding: 5px 20px 10px 20px;}
+  div#splash h1                     {color: #fff;font-size:2.3em; line-height:1.2em; font-weight:700; margin: 25px 0 25px 0; padding:0;}
+  div#splash h2                     {font-size:1.5em; line-height:1em; font-weight:700; color:#fff}
+  div#splash h2 a                   {font-size:1.5em; line-height:1em; font-weight:700;}
+  div#splash p                      {font-size:1.3em;}            
+  
+  div.invite                        {float:left; margin:0; padding:0}
+  
+  div#welcome                       {float:left;background-color:#F2F7FE;margin-bottom:20px} 
+  div#feedback                      {background:#EFEFEF;border:solid 1px #ccc;}
+
+
+/* validation error messages */
+  #errorExplanation                 {border:1px solid #E3BEBE; background:#F6E8E8; margin:10px 0 20px; padding:20px;}
+  #errorExplanation h2              {margin:-20px -20px 20px; background:#E3BEBE; padding:10px 20px;}
+  #errorExplanation p               {margin:0 0 20px;}
+  #errorExplanation ul              {margin:0 0 0 25px;}
+  #errorExplanation ul li           {float:none !important; list-style-type:disc; margin:0 0 3px; padding:0;}
+
+
+/* pagination links */  
+  div.pagination                    {float:left; width:550px; margin:15px 0;}
+  div.pagination a                  {padding:3px 7px; color:#3671A1; text-decoration:none;}
+  div.pagination a:hover            {color:#fff; background:#3671A1;}
+  div.pagination span.disabled      {padding:3px 7px; text-transform:lowercase; color:#ccc;}
+  div.pagination span.current       {padding:3px 5px; font-weight:bold;}
+
+/* header menu navigation */
+  #header                           {float:left; width:100%; padding:1px 0 0; background:#000; color:#fff;margin:0 auto; line-height:12px; font-size:12px;}
+    #header a                       {color:#fff; text-decoration:none; background:none;}
+    #header a:hover                 {text-decoration:underline;}
+    #header h3                      {float:left; display:inline; margin:0; padding:0;}
+    #header h3 a                    {display:block; font-size:12px; margin:0 20px 0 -10px; padding:8px 10px;}
+    #header h3 a:hover              {background:#555; text-decoration:none;}
+    #header h3.active a             {background:#fff; color:#333;}
+    #nav                            {float:right; display:inline; margin:0; padding:0;}
+    #nav li                         {float:left; list-style-type:none;}
+    #nav li a                       {display:block; float:left; padding:8px 10px;}
+    #nav li a:hover                 {background:#555; text-decoration:none;}
+    #nav li.active a                {background:#fff; color:#333;}
+
+/* Posts */
+dl.meta {margin-bottom:40px}
+.meta dt {clear:left; float:left; color:#999; font-size:11px; font-weight:normal;line-height:24px;width:40px;border-top:solid 1px #999}
+.meta dd {clear:right;font-size:11px; line-height:16px;padding:4px 0 4px 40px; border-top:solid 1px #ccc}    
+
+#comments       {border-top: solid 5px #999; padding-top:10px;}
+.comment .body  {border-top: solid 1px #ccc; margin-bottom:40px;}
+  
+  
+
+ 

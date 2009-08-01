@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090724215908) do
+ActiveRecord::Schema.define(:version => 20090801044350) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
@@ -31,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20090724215908) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "displayname"
+    t.string   "time_zone"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

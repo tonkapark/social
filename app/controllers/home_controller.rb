@@ -1,12 +1,12 @@
 class HomeController < ApplicationController
+  before_filter :authenticate, :except => [:index]
   
   def index
-    if signed_in?
-      @items = Item.paginate :page => params[:page]
-    end
+    
   end
 
   def show
-  end
+    render :action => params[:page]
+  end  
 
 end

@@ -20,8 +20,13 @@
         <h3><%= link_to SITE_NAME, root_url %></h3>        
         <ul id="nav">
           <% if signed_in? %>
+          
+          <li><%= link_to 'Start Conversation', new_item_path %></li>
+          <li><%= link_to 'Conversations', items_path %></li>
+          <li><%= link_to 'About', home_path('about') %></li>
           <li><%= link_to 'Logout', sign_out_url %></li>
           <% else %>
+          <li><%= link_to 'Sign up', sign_up_url %></li>
           <li><%= link_to 'Sign in', sign_in_url %></li>
           <% end %>
         </ul>

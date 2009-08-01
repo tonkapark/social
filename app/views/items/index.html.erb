@@ -1,8 +1,8 @@
-<h1>Listing items</h1>
+<% title 'Ongoing Conversations' %>
 
 
 <%= render :partial => @items %>
 
-<br />
-
-<%= link_to 'New item', new_item_path %>
+<%= will_paginate @items %> 
+<br/>
+<%= link_to 'Start a new conversation', new_item_path %>
