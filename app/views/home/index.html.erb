@@ -1,26 +1,30 @@
 <% title SITE_NAME, false %>
 
-<div id="splash" class="span-10">
+
+<div id="splash" class="<%- if signed_in? -%>span-18 last<%- else -%>span-10<%- end -%>">
   <div class="inner">
-    <h1>The Social Network for <br/> <%= SITE_NAME %></h1>
-    <p>Building a community together. Meet your neighbors. Share your plans. Talk about your favorites.</p>
-    <h2>Not a member, <%= link_to "Signup", sign_up_path %></h2>
+    <%- unless signed_in? -%><h1><%= SITE_NAME %></h1><%- else -%><h2>Welcome <%= current_user.displayname %></h2><%- end -%>
+    <p>Building community together. Meet your neighbors. Share your story. Talk about your favorites.</p>
+    <% unless signed_in? %><h2>Not a member, <%= link_to "Signup", sign_up_path %></h2><% end %>
   </div>
 </div>
 
-<div class="prepend-1 span-7 last">
 <% unless signed_in? %>
+<div class="prepend-1 span-7 last">
   <%= render :partial => 'sessions/form' %>
-<% else %>
-  <ul>
-    <% if signed_in? %>
-    
-    <li><%= link_to 'Start Conversation', new_item_path %></li>
-    <li><%= link_to 'Conversations', items_path %></li>
-    <li><%= link_to 'About', home_path('about') %></li>
-    <li><%= link_to 'Logout', sign_out_url %></li>
-    <% end %>
-  </ul>
-<% end %>
 </div>
 
+<% else %>
+<div class="span-18 last">
+  <div class="span-8 append-1 first">
+    <h3>Join the Conversation</h3>
+    <p>Follow the community <%= link_to 'conversations', items_path %> or <%= link_to "start a new conversation", new_item_path %>. </p>
+  </div>
+  <div class="prepend-1 span-7 last">
+    <h3>Meet your neighbors</h3>
+    <p>Find <%= link_to 'people', users_path %> in the neighborhood and where they are from or you can edit your own <%= link_to 'profile', user_path(current_user) %>.</p>
+  </div>
+  
+
+</div>
+<% end %>

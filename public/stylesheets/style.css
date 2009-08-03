@@ -31,6 +31,8 @@
   
   div.flash                         {background-color:#E8F6E8 ;border:solid 1px #B9E3B9;}
   
+  img             {border:solid 1px #ccc; padding:1px;}
+  
 /* public home */  
   div#splash                        {margin:0 0 20px 0;background:#000; color: #ffcc33; }
   div#splash div.inner              {padding: 5px 20px 10px 20px;}
@@ -75,13 +77,28 @@
     #nav li.active a                {background:#fff; color:#333;}
 
 /* Posts */
-dl.meta {margin-bottom:40px}
-.meta dt {clear:left; float:left; color:#999; font-size:11px; font-weight:normal;line-height:24px;width:40px;border-top:solid 1px #999}
-.meta dd {clear:right;font-size:11px; line-height:16px;padding:4px 0 4px 40px; border-top:solid 1px #ccc}    
+div.post        {padding-bottom:10px;margin-bottom:20px; border-bottom:solid 1px #ccc}
+.post h2        {margin-top:0}
 
+.meta .avatar   {float:left; margin-right:10px;}
+.meta h3  {font-size:1.1em; margin:0 0 5px 0}
+.meta h4  {font-size:.9em; margin:0 0 5px 0; font-weight:normal;}
+.meta p   {margin:0; padding:0;  font-size:12px;}
+
+div.brief       {padding-bottom:10px;margin-bottom:20px; border-bottom:solid 1px #ccc}
+
+/* Comments */
 #comments       {border-top: solid 5px #999; padding-top:10px;}
-.comment .body  {border-top: solid 1px #ccc; margin-bottom:40px;}
-  
-  
+div.comment        {margin-bottom:40px;}
+.comment .body  {border-top: solid 1px #ccc; }
 
- 
+  
+/* users list */
+div.user          {margin:0 0 20px; font-size:18px;}
+div.profile       {padding-bottom:20px; margin-bottom:20px; border-bottom:solid 1px #ccc;}
+  
+/* Footer */  
+#footer .container {padding-top:10px;margin-top:40px; border-top:solid 1px #999}  
+#footer ul       {display:inline; margin:0; padding:0}
+#footer ul li    {list-style-type:none;}
+#footer ul li a  {display:block; float:left; }

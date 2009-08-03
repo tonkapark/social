@@ -1,0 +1,7 @@
+<% title "Edit Account" %>
+<hr/>
+
+<% form_for @user do |form| %>
+  <%= render :partial => '/users/form', :object => form %> 
+  <%= form.submit 'Update', :disable_with => 'Please wait...' %> | <%= link_to 'Cancel', user_path(@user) %>
+<% end %>

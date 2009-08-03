@@ -1,15 +1,11 @@
-<% form_for(@item) do |f| %>
-  <%= f.error_messages %>
+
+  <%= form.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title, {:class => "big"} %>
+    <%= form.label :title %><br />
+    <%= form.text_field :title, {:class => "big"} %>
   </p>
   <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= form.label :body %><br />
+    <%= form.text_area :body %>
   </p>
-  <p>
-    <%= f.submit button_name %>
-  </p>
-<% end %>

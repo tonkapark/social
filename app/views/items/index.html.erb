@@ -1,8 +1,7 @@
-<% title 'Ongoing Conversations' %>
-
+<% title 'Community Conversations' %>
+<p class="instructions">Ordered by recent activity</p>
+<hr />
 
 <%= render :partial => @items %>
 
 <%= will_paginate @items %> 
-<br/>
-<%= link_to 'Start a new conversation', new_item_path %>

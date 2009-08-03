@@ -1,0 +1,14 @@
+    <div class="meta">    
+      <div class="avatar">
+        <%= gravatar comment.user.email, { :size => 50 } %>
+      </div>
+      
+      <h3><%= comment.user.displayname.blank? ? '[Anonymous]' : link_to(h(comment.user.displayname), user_path(comment.user)) %></h3> 
+      <% if comment.user.location? %><h4><%= comment.user.location %></h4><% end %>
+      <p><%= time_ago_in_words comment.updated_at %></p>
+      
+      <%- if comment.changeable_by?(current_user) -%>
+      <p><%= link_to 'Edit', [:edit, comment.item, comment] %> | <%= link_to 'Delete', [comment.item, comment], :confirm => 'Are you sure?', :method => :delete %></p>
+      <%- end -%>      
+    
+    </div>

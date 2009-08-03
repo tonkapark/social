@@ -1,0 +1,8 @@
+<p>A new post was added at <%= link_to SITE_NAME, "http://#{SITE}" %></p>
+
+<p>
+Posted by <%=@item.user.displayname %> <br/>
+Link to post: <%= link_to h(@item.title), item_url(@item, :host=>SITE) %><br/>
+</p>
+
+<p>To stop receiving these notification emails login to your profile to change your preferences. <%= link_to SITE_NAME, "http://#{SITE}" %></p>

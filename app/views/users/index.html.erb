@@ -1,0 +1,14 @@
+
+<% title "People" %>
+<p class="instructions">Ordered by display name ascending.</p>
+<hr/>
+
+<div class="users">
+  <% @users.each do |user| %>    
+  <% if user.email_confirmed? %>
+    <%= render :partial => user %>
+  <% end %>
+  <% end %>
+
+  <%= will_paginate @users %> 
+</div>

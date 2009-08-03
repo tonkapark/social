@@ -4,20 +4,12 @@
 <div class="post span-18">
 
   <div class="span-12">
-    <h1><%=h @item.title %></h1>
-    <p><%= safe(@item.body) %></p>
+    <h1><%=h @item.title %> <%- if @item.changeable_by?(current_user) -%>
+      <small><%= link_to 'Edit', [:edit, @item] %></small><%- end -%></h1>
+    <p><%= auto_link(safe(@item.body)) %></p>
   </div>
   <div class="prepend-1 span-5 last">
-    <dl class="meta">
-      <dt>Posted</dt>
-      <dd><%= @item.published_at.strftime("%B %d, %Y at %I:%M%p") %></dd>
-      <dt>Author</dt>
-      <dd class="author"><%=h @item.user.displayname %></dd>
-      <%- if @item.changeable_by?(current_user) -%>
-      <dt>Change?</dt>
-      <dd><%= link_to 'Edit', edit_item_path(@item) %></dd>
-      <%- end -%>
-    </dl>
+    <%= render :partial => 'meta', :locals => {:item => @item} %>
   </div>
 
 </div>
@@ -29,7 +21,7 @@
   <% unless @item.comments.empty? %>
     <h3>Comments</h3>
     <% @item.comments.each do |comment| %>
-      <%= render :partial => comment %>
+      <%= render :partial => comment %>      
     <% end %>
   <% end %>
   

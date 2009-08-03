@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090801044350) do
+ActiveRecord::Schema.define(:version => 20090803160153) do
 
   create_table "comments", :force => true do |t|
     t.integer  "item_id"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(:version => 20090801044350) do
     t.boolean  "admin"
     t.string   "displayname"
     t.string   "time_zone"
+    t.string   "location"
+    t.boolean  "item_notify",                       :default => true
+    t.text     "about"
+    t.string   "website"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

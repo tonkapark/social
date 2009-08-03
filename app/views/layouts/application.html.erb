@@ -7,7 +7,6 @@
   <title><%= h(yield(:title) || "Untitled") %></title>
   <%= stylesheet_link_tag "screen" %>
   <%= stylesheet_link_tag "style" %>
-  <%= stylesheet_link_tag "print", :media => "print" %>
   <!--[if IE]><link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
   <%= yield(:head) %>
@@ -20,10 +19,10 @@
         <h3><%= link_to SITE_NAME, root_url %></h3>        
         <ul id="nav">
           <% if signed_in? %>
-          
+          <li><%= link_to 'Conversations', items_path %></li>          
           <li><%= link_to 'Start Conversation', new_item_path %></li>
-          <li><%= link_to 'Conversations', items_path %></li>
-          <li><%= link_to 'About', home_path('about') %></li>
+          <li><%= link_to 'People', users_path %></li>
+          <li><%= link_to 'Profile', user_path(current_user) %></li>
           <li><%= link_to 'Logout', sign_out_url %></li>
           <% else %>
           <li><%= link_to 'Sign up', sign_up_url %></li>
@@ -55,6 +54,14 @@
       <%= yield %>
     </div>
     
+  </div>
+  
+  <div id="footer" class="">
+    <div class="container">
+      <div class="span-18">
+        <p><%= SITE_NAME %> | <%= link_to 'About', home_path('about') %> <% if signed_in? %>| <%= link_to 'Start Conversation', new_item_path %> | <%= link_to 'Conversations', items_path %> | <%= link_to 'Logout', sign_out_url %><% end %></p>
+      </div>
+    </div>
   </div>
 </body>
 </html>

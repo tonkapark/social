@@ -1,5 +1,6 @@
-<h1>New item</h1>
+<% title "Start a conversation" %>
 
-<%= render :partial => 'form', :locals => { :button_name => "Create"} %>
-
-<%= link_to 'Back', items_path %>
+<% form_for @item do |form| %>
+  <%= render :partial => '/items/form', :object => form %>
+  <%= form.submit 'Publish', :disable_with => 'Please wait...' %> | <%= link_to 'Cancel', items_path %>
+<% end %>

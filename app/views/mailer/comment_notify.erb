@@ -1,0 +1,7 @@
+<p>A comment was added to your post, "<%= h(@comment.item.title) %>"</p>
+
+<p>
+Link to post: <%= link_to h(@comment.item.title), item_url(@comment.item, :host=>SITE) %><br/>
+</p>
+
+<p>To stop receiving these notification emails login to your profile to change your preferences. <%= link_to SITE_NAME, "http://#{SITE}" %></p>

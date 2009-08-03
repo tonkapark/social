@@ -69,7 +69,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(item_comments_url(@item)) }
+      format.html { redirect_to(item_url(@item)) }
       format.xml  { head :ok }
     end
   end

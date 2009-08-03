@@ -1,6 +1,6 @@
 <h1>Editing item</h1>
 
-<%= render :partial => 'form', :locals => { :button_name => "Update"} %>
-
-<%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<% form_for @item do |form| %>
+  <%= render :partial => '/items/form', :object => form %>
+  <%= form.submit 'Update', :disable_with => 'Please wait...' %> | <%= link_to 'Cancel', item_path(@item) %>
+<% end %>

@@ -19,4 +19,29 @@
       <%= form.label :password_confirmation, "Confirm password" %>
       <%= form.password_field :password_confirmation, {:class => "big"} %>
     </li>
+    
+<% unless @user.new_record? %>
+    <li>
+      <label for="user_website">Email Notification <small>(check to receive post and comment emails)</small></label>
+      <%= form.check_box :item_notify, {:class => "big"} %>
+    </li>
+
+    <li>
+      <label for="user_website">Website <small>(optional)</small></label>
+      <%= form.text_field :website, {:class => "big"} %>
+    </li>
+  
+    <li>
+      <label for="user_location">Hometown <small>(optional)</small></label>
+      <%= form.text_field :location, {:class => "big"} %>
+    </li>
+    
+    <li>
+      <label for="user_about">Bio <small>(optional)</small></label>
+      <%= form.text_area :about, {:class => "big"} %>
+    </li>
+
+
+<% end %>
+    
   </ul>

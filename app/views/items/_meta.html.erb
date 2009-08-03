@@ -1,0 +1,8 @@
+  <div class="meta">
+    <div class="avatar">
+      <%= gravatar item.user.email, { :size => 50 } %>
+    </div>
+    <h3><%= link_to h(item.user.displayname), user_path(item.user) %></h3> 
+    <% if item.user.location? %><h4><%= item.user.location %></h4><% end %>
+    <p><%= time_ago_in_words item.published_at %> ago</p>
+  </div>

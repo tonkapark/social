@@ -1,12 +1,12 @@
 
-<div class="post">
- <h2><%= link_to h(item.title), item %></h2> 
- <dl class="meta">
-  <dt>Posted</dt>
-  <dd><%= item.published_at.strftime("%B %d, %Y at %I:%M%p") %></dd>
-  <dt>Author</dt>
-  <dd class="author"><%=h item.user.displayname %></dd>
- </dl>
+<div class="post span-18 last">
+  <div class="span-5">
+    <%= render :partial => 'items/meta', :locals => {:item => item} %>
+  </div>
 
-
+  <div class="span-12 last">
+   <h2><%= link_to h(item.title), item %> <%- if item.changeable_by?(current_user) -%>
+      <small><%= link_to 'Edit', [:edit, item] %></small><%- end -%></h2> 
+  </div>
+  
 </div>
